@@ -12,5 +12,5 @@ with tab1:
     st.markdown("Ya que el numero de condiciones que se tiene que satisfacer es $$\sum_{i=0}^n m_i + (n + 1)$$ y un polinomio de grado $M$ tiene $M + 1$ coeficientes que pueden usarse para satisfacer estas condiciones.")
     st.subheader("Defincion")
     st.markdown("Sean $x_0, x_1, x_2, ..., x_n, n+1$ numeros distintos en $[a,b]$ y $m_i$ un entero no-negativo asociado a $x_i$ para $i = 0, 1, ..., n$. Supongase que $f \in C^m[a, b]$ y que $m = max_{0 \leq i \leq n} m_i$. El plinomio osculante que aproxima a $f(x)$ es el polinomio $P(x)$ de menor grado tal que")
-    st.markdown(r"$\frac{d^k P(x_i)}{dx^k}$")
+    st.markdown(r"$\frac{d^k P(x_i)}{dx^k} = \frac{d^k f(x_i)}{dx^k}$     Para $i = 0, 1, ..., n$ y $k = 0, 1, 2, ..., m$.")
     st.subheader("Teorema")
