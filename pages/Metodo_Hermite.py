@@ -23,4 +23,4 @@ with tab1:
     st.markdown("En este contexto, $L_{n,j}$ denota al j-esimo coeficiente polinomial de Lagrange de grado $n$, definido en la ecuacion")
     st.markdown("$L_{n,j} (x) = $\prod_{i=1}_{i \neq j}^n \fraq{x-x_i}{x_j - x_i}$ para cada $j = 0, 1, ..., n$")
     st.markdown("Ademas, si $f \in C^{(2n+2)}[a, b]$, entonces")
-    st.markdown("$f(x)-H_{2n+1}(x) = \fraq{(x-x_0)^2 ... (x-x_n)^2}{(2n+2)!}f^{(2n+2)}(\xi)$")
+    st.markdown("$f(x)-H_{2n+1}(x) = \frac{(x-x_0)^2 ... (x-x_n)^2}{(2n+2)!}f^{(2n+2)}(\xi)$")
