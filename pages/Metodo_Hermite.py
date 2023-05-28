@@ -1,0 +1,34 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplos","Aplicaciones"])
+with tab1:
+    st.title(":blue[Metodo de Hermite]")
+    st.header("Teorema")
+    """
+    Un polinomio se puede ajustar no solo a los valores de la función sino tambien a las derivadas en los puntos. Los polinomios ajustados a los valores de la funcion y de su derivada se llaman r:[polinomios de interpolacion de Hermite o polinomios osculantes].
+
+    El conjunto de los polinomios osculantes es una generalizacion de los polinomios de Taylor y los polinomios de Lagrange. Estos polinomios tienen la propiedad de que dados n + 1 numeros distintos x\u2080,x\u2081,x\u2082,...,x\u208
+    
+    """
+    st.latex(r""" y = \beta + \theta_{n} x_n """ )
+    """
+    
+    Mientras que por otro lado, la tasa de aprendizaje del descenso del gradiente se representa como $alpha$
+    """
+    st.latex(r"""\alpha""")
+    """La tasa de aprendizaje es el tamaño del paso dado por cada gradiente. Si bien una tasa de aprendizaje grande puede darnos valores mal optimizados para
+    """
+    st.latex(r"""\beta y \theta""") 
+    """, la tasa de aprendizaje también puede ser demasiado pequeña, lo que requiere un incremento sustancial en el número de iteraciones necesarias para obtener el punto de convergencia (el punto de valor óptimo para beta y theta) . Este algoritmo nos da el valor de alpha , beta y theta como salida.
+    . Para implementar un algoritmo de descenso de gradiente necesitamos seguir 4 pasos:
+    
+    +Inicializar aleatoriamente el sesgo y el peso theta
+    +Calcular el valor predicho de y que es Y dado el sesgo y el peso
+    +Calcular la función de costo a partir de los valores pronosticados y reales de Y
+    +Calcular pendiente y los pesos.
+    
+    Se inicia tomando un valor aleatorio para el sesgo y las ponderaciones, que en realidad podría estar cerca del sesgo y las ponderaciones óptimos o puede estar lejos.
+    """
+  
