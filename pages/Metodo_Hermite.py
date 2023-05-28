@@ -15,4 +15,4 @@ with tab1:
     st.markdown(r"$\frac{d^k P(x_i)}{dx^k} = \frac{d^k f(x_i)}{dx^k}$     Para $i = 0, 1, ..., n$ y $k = 0, 1, 2, ..., m$.")
     st.markdown("Notese que se cuando $n = 0$ el polinomio osculante que aproxima a $f(x)$ es el polinomio de Taylor de grado $m_0$ para $f(x)$ en $x_0$. Cuando $m_i = 1$ para cada $i = 0, 1, ..., n$ da una clase de polinomios llamados polinomios de Hermite. Para una funcion dada $f$, estos polinomios no solo coinciden con $f$ en $x_0, x_1, x_2, ..., x_n$, sino que, como sus primeras derivadas coinciden tambien con las de $f$, tienen la misma apariencia que la funcion en $(x_i, f(x_i))$ en el sentido que las lineas tangentes al polinomio y a la funcion coinciden.")
     st.subheader("Teorema 1")
-    st.markdown("Si $f \in C^1[a, b]$ y $x_0, x_1, x_2, ..., x_n \in [a,b]$ son distintos, el unico polinomio de menor grado que coincide con $f$ y $\acute{y}$")
+    st.markdown("Si $f \in C^1[a, b]$ y $x_0, x_1, x_2, ..., x_n \in [a,b]$ son distintos, el unico polinomio de menor grado que coincide con $f$ y $f'$")
