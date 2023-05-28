@@ -21,6 +21,6 @@ with tab1:
     st.markdown(r"$H_{n,j}(x) = [1-2(x-x_j)L'_{n,j}(x_j)]L_{n,j}^2 (x)$")
     st.markdown(r"$\widehat(H_{n,j})(x) = (x-x_j)L_{n,j}^2 (x)$")
     st.markdown("En este contexto, $L_{n,j}$ denota al j-esimo coeficiente polinomial de Lagrange de grado $n$, definido en la ecuacion")
-    st.markdown(r"$L_{n,j}(x) = \prod_{i=1}_{i \neq j}^n \frac{x-x_i}{x_j - x_i}$ para cada $j = 0, 1, ..., n$")
+    st.markdown(r"$L_{n,j}(x) = \prod_{i=1, i \neq j}^n \frac{x-x_i}{x_j - x_i}$ para cada $j = 0, 1, ..., n$")
     st.markdown("Ademas, si $f \in C^{(2n+2)}[a, b]$, entonces")
     st.markdown(r"$f(x)-H_{2n+1}(x) = \frac{(x-x_0)^2 ... (x-x_n)^2}{(2n+2)!}f^{(2n+2)}$")
