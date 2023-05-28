@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplos","Aplicaciones"])
+tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplo","Aplicacion"])
 with tab1:
     st.title(":blue[Metodo de Hermite]")
     st.header("Definicion")
@@ -25,3 +25,14 @@ with tab1:
     st.markdown("Ademas, si $f \in C^{(2n+2)}[a, b]$, entonces")
     st.markdown(r"$f(x)-H_{2n+1}(x) = \frac{(x-x_0)^2 ... (x-x_n)^2}{(2n+2)!}f^{(2n+2)}(\xi)$")
     st.markdown(r"Para alguna $\xi$ con $a<\xi<b$.")
+with tab2:
+    st.title(":blue[Metodo de Hermite]")
+    st.header("Ejemplo")
+    st.markdown("Usar el polinomio de menor grado que coincide con los datos mostrados en la tabla para la funcion de Bessel de pimera clase de orden cero para encontrar una aproximacion de $f(1.5)$")
+    """
+    | j | x_j | f(x_j)    | f'(x_j)    |
+    |---|-----|-----------|------------|
+    | 0 | 1.3 | 0.6200860 | -0.5220232 |
+    | 1 | 1.6 | 0.4554022 | -0.5698959 |
+    | 2 | 1.9 | 0.2818186 | -0.5811571 |
+    """
