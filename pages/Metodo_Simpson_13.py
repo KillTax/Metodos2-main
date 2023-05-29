@@ -5,17 +5,20 @@ import numpy as np
 
 tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplo","Aplicacion"])
 with tab1:
-    st.title(":blue[Regla del Trapecio]")
+    st.title(":blue[Regla de Simpson 1/3]")
     st.header("Definicion")
-    st.markdown("La primera de las formulas de Newton-Cotes esta basada en aproximar $f(x)$ en el intervalo $(x_0,x_1)$ mediante una linea recta, de ahi el nombre de *regla del trapecio*, la cual fue obtenida mediante la integracion de $P_1(x)$; sin embargo, tambien puede considerarse una adaptacion de la definicion de la integral definida como una suma al estimar $\int_a^b f(x)dx$ subdividiendo el intervalo de $a$ a $b$ en $n$ subintervalos. El area bajo la curva en cada subintervalo es aproximada por el trapecio formado por sustituir la curva por su secante. Entonces, la integral es aproximada por la suma de todas las areas trapezoidales. Si se conociera el limite de esta suma cuando el ancho del intervalo tiende a cero, se tendria el valor exacto de la integral, pero en la integracion numerica el numero de intervalos es finito.")
-    st.markdown("Para un intervalo $[a,b]$ subdividido en $n$ subintervalos de tamaño $h$, la formula se generaliza de la siguiente forma:")
-    st.markdown(r"$\int_a^b f(x)dx = \sum_{i=0}^n \frac{h}{2}(f_i+f_{i+1}) = \frac{h}{2}(f_0 +2f_1 +2f_2 + ... +2f_{n-1} +f_n) =$")
-    st.markdown(r"$\int_a^b f(x)dx = \frac{h}{2} (f_0 +f_n + 2 \sum_{i=1}^{n-1} f_i)$")
-    st.markdown("A la generalizacion de la formula de Newton-Cotes para $n$ subintervalos se le llama *regla del trapecio compuesta* o simplemente *regla del trapecio*. Es obvio que el metodo esta sujeto a errores dependiendo del tamaño del intervalo y de las caracteristicas propias de la funcion.")
-    st.markdown("Esta regla puede aplicarse a una funcion que solo se conoce por una tabla de valores o a una funcion conocida, en cuyo caso debera decidirse el valor apropiado de $h$ para obtener una buena aproximacion.")
+    st.markdown("Las siguientes formulas compuestas de Newton-Cotes, basadas en polinomios de interpolacion de $2^o$ y $3^{er}$ grado, son conocidas como las reglas de simpson. La primera, basada en uno cuadratico, es conocida como la regla de Simpson 1/3, y la que esta basada en un polinoio cubico se conoce como la regla de Simpson 3/8, estos nombres se deben a los coeficientes de las formulas.")
+    st.markdown("La formula de $2^o$ grado de Newton-Cotes integra un polinomio cuadratico sobre dos intervalos del mismo ancho, a continuacion se construira la regla compuesta de la ecuacion")
+    st.markdown(r"$\int_{x_0}^{x_1}f(x)dx = \frac{h}{3}[f_0+4f_1+2f_2]$")
+    st.markdown("La formula compuesta que se aplica a una subdivision del intervalo de integracion en $n$ subintervalos (con $n$ par) es:")
+    st.markdown(r"$\int_a^bf(x)dx = \frac{h}{3}[f_0+4f_1+2f_2+4f_3+2f_4+...+2f_{n-2}+4f_{n-1}+f_n]$")
+    st.markdown("Esta formula se reconoce como la regla de Simpson 1/3")
+    st.markdown("Cuyo termino del error global esta dado por")
+    st.markdown(r"$E_{global} = -\frac{h^5}{90}\frac{(b-a)}{2h}f^{iv}(\xi) = -\frac{(b-a)}{180}h^4f^{iv}(\xi)$")
+    st.markdown("Como puede verse el orden del error global cambia a $O(h^4)$. El denominador en el termino del error cambia a 180 porque se esta integrando sobre un numero de subintervalos par (significa que la regla global se aplica $h/2$ veces). El hecho que el error es $O(h^4)$, es de especial importancia")
 
 with tab2:
-    st.title(":blue[Regla del Trapecio]")
+    st.title(":blue[Regla de Simpson 1/3]")
     st.header("Ejemplo")
     st.markdown("Supongase que se desea integrar la funcion tabulada a continuacion sobre el intervalo (1.4, 3.8).")
     st.markdown(r"""
@@ -52,6 +55,6 @@ with tab2:
     st.markdown(r"""*error* $$= -\frac{1}{12}(0.2)^2(3.4-1.8) \left\{\begin{array}{l}e^{1.4}\\e^{3.8}\end{array}\right\} = \left\{\begin{array}{l}-0.0324 (\min)\\-0.3573 (\max)\end{array}\right\}$$""")
     st.markdown("En el ejemplo el error fue: $-0.1356$, como puede observarse, queda dentro de la cota obtenida.")
 with tab3:
-    st.title(":blue[Regla del Trapecio]")
+    st.title(":blue[Regla de Simpson 1/3]")
     st.header("Aplicacion")
     
