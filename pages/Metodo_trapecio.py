@@ -49,7 +49,7 @@ with tab2:
     st.markdown("Cuando la funcion $f(x)$ es conocida, esta ultima expresion permite estimar el error de la integracion numerica por la regla del trapecio. Aplicando esta ecuacion, el valor se encierra al calcular los valores maximos y minimos de $f'(x)$ en el intervalo $[a,b]$.")
     st.markdown("La expresion del error esta dada por:")
     st.markdown(r"*error* $= -\frac{1}{12}h^3nf''(\xi) 1.4 \leq \xi \leq 3.8$")
-    st.markdown(r"""*error* $$= -\frac{1}{12}(0.2)^2(3.4-1.8) \left.\begin{array}{l}2x+3y=5\\6x-2y=8\end{array}\right\}$$""")
+    st.markdown(r"""*error* $$= -\frac{1}{12}(0.2)^2(3.4-1.8) \left\{\begin{array}{l}e^1.4\\e^3.8\end{array}\right\}$$""")
     st.markdown("")
     st.markdown("")
     st.markdown("")
