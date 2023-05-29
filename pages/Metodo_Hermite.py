@@ -51,3 +51,4 @@ with tab2:
     st.markdown(r"$P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, ..., x_k](x-x_0)(x-x_1)...(x-x_{k-1})$")
     st.markdown("y la conexion entre la $n$-esima diferencia dividida y la $n$-esima derivada de $f(x)$")
     st.markdown("Supongase que se dan $n + 1$ numeros distintos $x_0, x_1, ..., x_n$ con sus valores de $f(x)$ y $f'(x)$. Lo primero es definir una nueva sucesion $z_0, z_1, ..., z_{2n+1}$ por")
+    st.markdown("$z_{2i} = z_{2i+1} = x_i$ para cada $i = 0, 1, ..., n$.")
