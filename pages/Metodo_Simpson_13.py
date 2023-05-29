@@ -20,40 +20,33 @@ with tab1:
 with tab2:
     st.title(":blue[Regla de Simpson 1/3]")
     st.header("Ejemplo")
-    st.markdown("Supongase que se desea integrar la funcion tabulada a continuacion sobre el intervalo (1.4, 3.8).")
+    st.markdown("Aplicar la regla de Simpson 1/3 a los datos de la siguiente tabla:")
     st.markdown(r"""
-    | $x$ | $f(x)$ |
-    |-----|--------|
-    | 1.4 |  4.055 |
-    | 1.6 |  4.953 |
-    | 1.8 |  6.050 |
-    | 2.0 |  7.389 |
-    | 2.2 |  9.025 |
-    | 2.4 | 11.023 |
-    | 2.6 | 13.464 |
-    | 2.8 | 16.445 |
-    | 3.0 | 20.086 |
-    | 3.2 | 24.533 |
-    | 3.4 | 29.964 |
-    | 3.6 | 36.598 |
-    | 3.8 | 44.701 |
+    | $i$ |   $x$  |  $f(x)$ |
+    |-----|--------|---------|
+    |  0  |   0.7  | 0.64835 |
+    |  1  |   0.9  | 0.91360 |
+    |  2  |   1.1  | 1.16092 |
+    |  3  |   1.3  | 1.36178 |
+    |  4  |   1.5  | 1.48500 |
+    |  5  |   1.7  | 1.55007 |
+    |  6  |   1.9  | 1.52882 |
+    |  7  |   2.1  | 1.44513 |
     """)
-    st.markdown("Entonces empleando la regla del trapecio compuesta:")
-    st.markdown(r"$\int_1.4^3.8 f(x)dx = \frac{0.2}{2}(4.055 +2(4.953) + 2(6.050) + 2(7.389) + 2(9.025) + 2(11.023) + 2(13.464) + 2(16.445) + 2(20.086) + 2(24.533) + 2(29.964) + 2(36.598) + 44.701) = 40.7816$")
-    st.markdown("Los datos de la tabla corresponden a $f(x) = e^x$ asi que el valor exacto de la integral es:")
-    st.markdown(r"$e^3.8 - e^1.4 = 40.6460$")
-    st.markdown("Con Newton-Cotes se vio que el error de la regla del trapecio es ")
-    st.markdown(r"*error* $= -\frac{1}{12}h^3f''(\xi)$")
-    st.markdown("Vale enfatizar que este error es el error en un solo paso, por eso se llama error local. Dado que, generalmente, esta regla se aplica a una serie de subintervalos para obtener la integral de $x = a$ a $x = b$, el interes radica en el error global.")
-    st.markdown("El desarrollo de la formula para el error global de la regla del trapecio consiste en la suma de los errores locales:")
-    st.markdown(r"$E_{global} = -\frac{1}{12}h^3(f''(\xi_1)+f''(\xi_2)+...+f''(\xi_n))$")
-    st.markdown(r"Cada uno de los valores $\xi_i$ se encuentra en los $n$ subintervalos sucesivos.")
-    st.markdown("El hecho de que el error global sea $O(h^2)$ es razonable.")
-    st.markdown("Cuando la funcion $f(x)$ es conocida, esta ultima expresion permite estimar el error de la integracion numerica por la regla del trapecio. Aplicando esta ecuacion, el valor se encierra al calcular los valores maximos y minimos de $f'(x)$ en el intervalo $[a,b]$.")
-    st.markdown("La expresion del error esta dada por:")
-    st.markdown(r"*error* $= -\frac{1}{12}h^3nf''(\xi) 1.4 \leq \xi \leq 3.8$")
-    st.markdown(r"""*error* $$= -\frac{1}{12}(0.2)^2(3.4-1.8) \left\{\begin{array}{l}e^{1.4}\\e^{3.8}\end{array}\right\} = \left\{\begin{array}{l}-0.0324 (\min)\\-0.3573 (\max)\end{array}\right\}$$""")
-    st.markdown("En el ejemplo el error fue: $-0.1356$, como puede observarse, queda dentro de la cota obtenida.")
+    st.markdown("Dado que el numero de subintervalos es siete y no se ajusta a la regla de Simpson 1/3, existen dos posibilidades: el primero o el ultimo subintervalo se integran usando la regla del trapecio y el resto con la regla de Simpson 1/3")
+    st.markdown("Primera opcion, iniciando con la regla de Simpson 1/3:")
+    st.markdown(r"$\int_{0.7}^{1.9} f(x)dx \cong \frac{0.2}{3}(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
+    st.markdown("Regla del trapecio:")
+    st.markdown(r"$\int_{1.9}^{2.1} f(x)dx = \frac{0.2}{2}(1.52882 + 1.44513) = 0.297395$")
+    st.markdown("Total:")
+    st.markdown(r"$\int_{0.7}^{2.1} f(x)dx \cong 1.5193873 + 0.29739 = 1.8167823")
+    st.markdown("Segunda opcion, primer intervalo por la regla del trapecio:")
+    st.markdown(r"$\int_{0.7}^{0.9} f(x)dx \cong \frac{0.2}{2}(0.64835 + 0.91360) = 0.156195$")
+    st.markdown("Regla de Simpson 1/3")
+    st.markdown(r"$\int_{0.9}^{2.1} f(x)dx \cong \frac{0.2}{3}(0.91360 +4(1.16092) + 2(1.36178) + 4(1.48500) + 2(1.55007) + 4(1.52882) + 1.44513 = 1.661426$")
+    st.markdown("Total:")
+    st.markdown(r"$\int_{0.7}^{2.1} f(x)dx \cong 0.156195 + 0.29739 = 1.661426 = 1.817621")
+    st.markdown("Normalmente no se sabe en que extremo aplicar la regla del Trapecio, por lo que graficar los puntos e identificar la forma general de la curva puede ser util.")
 with tab3:
     st.title(":blue[Regla de Simpson 1/3]")
     st.header("Aplicacion")

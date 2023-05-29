@@ -36,9 +36,9 @@ with tab2:
     | 3.8 | 44.701 |
     """)
     st.markdown("Entonces empleando la regla del trapecio compuesta:")
-    st.markdown(r"$\int_1.4^3.8 f(x)dx = \frac{0.2}{2}(4.055 +2(4.953) + 2(6.050) + 2(7.389) + 2(9.025) + 2(11.023) + 2(13.464) + 2(16.445) + 2(20.086) + 2(24.533) + 2(29.964) + 2(36.598) + 44.701) = 40.7816$")
+    st.markdown(r"$\int_{1.4}^{3.8} f(x)dx = \frac{0.2}{2}(4.055 +2(4.953) + 2(6.050) + 2(7.389) + 2(9.025) + 2(11.023) + 2(13.464) + 2(16.445) + 2(20.086) + 2(24.533) + 2(29.964) + 2(36.598) + 44.701) = 40.7816$")
     st.markdown("Los datos de la tabla corresponden a $f(x) = e^x$ asi que el valor exacto de la integral es:")
-    st.markdown(r"$e^3.8 - e^1.4 = 40.6460$")
+    st.markdown(r"$e^{3.8} - e^{1.4} = 40.6460$")
     st.markdown("Con Newton-Cotes se vio que el error de la regla del trapecio es ")
     st.markdown(r"*error* $= -\frac{1}{12}h^3f''(\xi)$")
     st.markdown("Vale enfatizar que este error es el error en un solo paso, por eso se llama error local. Dado que, generalmente, esta regla se aplica a una serie de subintervalos para obtener la integral de $x = a$ a $x = b$, el interes radica en el error global.")
