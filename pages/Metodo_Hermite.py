@@ -1,6 +1,8 @@
 import streamlit as st
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+
 
 tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplo","Aplicacion"])
 with tab1:
@@ -82,3 +84,49 @@ with tab2:
     """)
     st.markdown(r"$H_5(1.5) = 0.620086 + (1.5-1.3)(-0.5220232) + (1.5-1.3)^2(-0.0897427) + (1.5-1.3)^2(1.5-1.6)( 0.0663657) + (1.5-1.3)^2(1.5-1.6)^2(0.0026663) + (1.5-1.3)^2(1.5-1.6)^2(1.5-1.9)(-0.0027738) = 0.5118277$")
     st.markdown("Como puede observarse el resultado es el mismo, lo que puede proporcionar una alternativa viable para su automatizacion con un programa.")
+with tab3:
+    st.title(":blue[Metodo de Hermite]")
+    st.header("Aplicacion")
+    # Calcular el valor derivado de la función base
+    def dl(i, xi):
+        result = 0.0
+        for j in range(0,len(xi)):
+            if j!=i:
+                result += 1/(xi[i]-xi[j])
+        result *= 2
+        return result
+    
+    # Calcular el valor de la función base
+    def l(i, xi, x):
+        deno = 1.0
+        nu = 1.0
+    
+        for j in range(0, len(xi)):
+            if j!= i:
+                deno *= (xi[i]-xi[j])
+                nu *= (x-xi[j])
+    
+        return nu/deno
+    
+    #Función de interpolación de ermitaño
+    def get_Hermite(xi, yi, dyi):
+        def he(x):
+            result = 0.0
+            for i in range(0, len(xi)):
+                result += (yi[i]+(x-xi[i])*(dyi[i]-2*yi[i]*dl(i, xi))) * ((l(i,xi,x))**2)
+            return result
+        return he
+    
+    import math
+    sr_x = [(i * math.pi) + (math.pi / 2) for i in range(-3, 3)]
+    sr_fx = [math.sin(i) for i in sr_x]
+    deriv = [0 para i en sr_x] # todas las derivadas son 0
+    Hx = get_Hermite (sr_x, sr_fx, deriv) # Obtiene la función de interpolación
+    tmp_x = [i * 0.1 * math.pi para i en el rango (-20, 20)] # casos de prueba
+    tmp_y = [Hx (i) para i en tmp_x] # Obtenga la coordenada vertical del caso de prueba de acuerdo con la función de interpolación
+    
+    #  
+    plt.plot(sr_x, sr_fx, 'ro')
+    plt.plot(tmp_x, tmp_y, 'b-')
+    plt.title('Hermite Interpolation')
+    plt.show()
