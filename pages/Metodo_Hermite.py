@@ -40,9 +40,9 @@ with tab2:
     st.markdown("""
     | $i$ | $x_j$ | $f(x_j)$    | $f'(x_j)$    | $L_j(x)$ | $L_j(x_j)$ | $H_{2,j}$ | $H_{2,j}$   |
     |-----|-------|-------------|--------------|----------|------------|-----------|-------------|
-    |  0  |  1.3  |  0.6200860  |  -0.5220232  |  2/9     |  -5        |   4/27    |   4/405     |
-    |  1  |  1.6  |  0.4554022  |  -0.5698959  |  8/9     |  0         |   64/81   |   -32/405   |
-    |  2  |  1.9  |  0.2818186  |  -0.5811571  |  -1/9    |  5         |   5/81    |   -2/405    |
+    |  0  |  1.3  |  0.6200860  |  -0.5220232  |   2/9    |    -5      |    4/27   |     4/405   |
+    |  1  |  1.6  |  0.4554022  |  -0.5698959  |   8/9    |     0      |   64/81   |   -32/405   |
+    |  2  |  1.9  |  0.2818186  |  -0.5811571  |  -1/9    |     5      |    5/81   |    -2/405   |
     """)
     st.markdown("Entonces el polinomio queda:")
     st.markdown(r"$H_5(1.5) = 0.620086(\frac{4}{27})+(\frac{64}{0.455402281})+0.2818186(\frac{5}{81})-0.5220232(\frac{4}{405})-0.5698959(\frac{-32}{405})-0.5811571(\frac{-2}{405})=0.511827701727$")
@@ -52,3 +52,20 @@ with tab2:
     st.markdown("y la conexion entre la $n$-esima diferencia dividida y la $n$-esima derivada de $f(x)$")
     st.markdown("Supongase que se dan $n + 1$ numeros distintos $x_0, x_1, ..., x_n$ con sus valores de $f(x)$ y $f'(x)$. Lo primero es definir una nueva sucesion $z_0, z_1, ..., z_{2n+1}$ por")
     st.markdown("$z_{2i} = z_{2i+1} = x_i$ para cada $i = 0, 1, ..., n$.")
+    st.markdown("Con esto se contruy la tabla de diferencias divididas de la forma en que se ha venido realizando, pero ultilizando $z_0, z_1, ..., z_{2n+1}$.")
+    st.markdown("Como cada $z_{2i} = z_{2i+1} = x_i$ para cada $i$, $f[z_{2i}, z_{2i+1}]$ no puede ser definida por la relacion basica")
+    st.markdown(r"$f[x_i, x_{i+1}]= \frac{f[x_{i+1}]-f[x_i]}{x_{i+1}-x_i}$")
+    st.markdown("Sin embargo, si se supone que la sustitucion razonable en esta situacion es:")
+    st.markdown(r"$f[z_{2i},z_{2i+1}]=f'(x_i)$")
+    st.markdown("Se puede usar los valores $f'(x_0), f'(x_1), ..., f'(x_n)$ en lugar de las primeras diferencias divididas indefinidas.")
+    st.markdown("""
+    |        $z$       |          $f(z)$        |            $f(z_i, z_{i+1})$                |
+    |------------------|------------------------|---------------------------------------------|
+    |    $z_0 = x_0$   |    $f[z_0] = f(x_0)$   |           $f[z_0,z_1] = f'(x_0)             |
+    |    $z_1 = x_0$   |    $f[z_1] = f(x_0)$   | $f[z_1,z_2] = \frac{f[z_2]-f[z_1]}{z_2-z_1} |
+    |    $z_2 = x_1$   |    $f[z_2] = f(x_1)$   |           $f[z_0,z_1] = f'(x_1)             |
+    |    $z_3 = x_1$   |    $f[z_2] = f(x_1)$   | $f[z_0,z_1] = \frac{f[z_4]-f[z_3]}{z_4-z_3} |
+    |        ...       |           ...          |                    ...                      |
+    |   $z_{2n} = x_n$ |  $f[z_{2n}] = f(x_n)$  |        $f[z_{2n},z_{2n+1}] = f'(x_n)        |
+    | $z_{2n+1} = x_n$ | $f[z_{2n+1}] = f(x_n)$ |                                             |
+    """)
