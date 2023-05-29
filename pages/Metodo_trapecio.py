@@ -50,9 +50,7 @@ with tab2:
     st.markdown("La expresion del error esta dada por:")
     st.markdown(r"*error* $= -\frac{1}{12}h^3nf''(\xi) 1.4 \leq \xi \leq 3.8$")
     st.markdown(r"""*error* $$= -\frac{1}{12}(0.2)^2(3.4-1.8) \left\{\begin{array}{l}e^{1.4}\\e^{3.8}\end{array}\right\} = \left\{\begin{array}{l}-0.0324 (\min)\\-0.3573 (\max)\end{array}\right\}$$""")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
+    st.markdown("En el ejemplo el error fue: $-0.1356$, como puede observarse, queda dentro de la cota obtenida.")
 with tab3:
     st.title(":blue[Metodo de Hermite]")
     st.header("Aplicacion")
