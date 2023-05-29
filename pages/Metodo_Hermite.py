@@ -69,3 +69,16 @@ with tab2:
     |   $z_{2n} = x_n$ |  $f[z_{2n}] = f(x_n)$  |        $f[z_{2n},z_{2n+1}] = f'(x_n)$        |
     | $z_{2n+1} = x_n$ | $f[z_{2n+1}] = f(x_n)$ |                                              |
     """)
+    st.markdown("Las diferencias divididas restantes se producen de la manera usual y por ultimo se emplean las diferencias divididas apropiadas para construir el polinomio de interpolacion de Newton.")
+    st.markdown(r"""
+    | $z_i$ |   $f(z_i)$  |  $f(z_i,z_{i+1})$   | $f(z_i,z_{i+1},z_{i+2})$ | $f(z_i,z_{i+1},z_{i+2},z_{i+3})$ | $f_i^[4]$ | $f_i^[5]$ |
+    |-------|-------------|---------------------|--------------------------|----------------------------------|-----------|-----------|
+    |  1.3  |  0.6200860  |     -0.5220232      |        -0.0897427        |            0.0663657             | 0.0026663 | -0.0027738|
+    |  1.3  |  0.6200860  |     -0.5489460      |        -0.0698330        |            0.0679655             | 0.0010020 |           |
+    |  1.6  |  0.4554022  |     -0.5698959      |        -0.0290537        |            0.0685667             |           |           |
+    |  1.6  |  0.4554022  |     -0.5786120      |        -0.0084837        |                                  |           |           |
+    |  1.9  |  0.2818186  |     -0.5811571      |                          |                                  |           |           |
+    |  1.9  |  0.2818186  |                     |                          |                                  |           |           |
+    """)
+    st.markdown(r"$H_5(1.5) = 0.620086 + (1.5-1.3)(-0.5220232) + (1.5-1.3)^2(-0.0897427) + (1.5-1.3)^2(1.5-1.6)( 0.0663657) + (1.5-1.3)^2(1.5-1.6)^2(0.0026663) + (1.5-1.3)^2(1.5-1.6)^2(1.5-1.9)(-0.0027738) = 0.5118277$")
+    st.markdown("Como puede observarse el resultado es el mismo, lo que puede proporcionar una alternativa viable para su automatizacion con un programa.")
