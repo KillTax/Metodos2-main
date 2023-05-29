@@ -18,7 +18,37 @@ with tab1:
 with tab2:
     st.title(":blue[Regla de Simpson 3/8]")
     st.header("Ejemplo")
-    st.markdown("Aplicar la regla de Simpson 1/3 a los datos de la siguiente tabla:")
+    st.markdown(r"Continuando con la funcion empleada en la Regla del Trapecio y Regla de Simpson 1/3, aplicar la regla de Simpson 3/8 a $f(x) = e^{-x^2}$ para integrar de $x = 0.2$ a $x = 1.5$. Comparar el resultado con 3, 6, 9, 12 paneles.")
+    st.markdown("Para ejemplificar el proceso se presentan las tablas y calculos de las 2 primeras aproximaciones")
+    st.markdown(r"""
+    |       h =  0.43333     |
+    |------------------------|
+    | $n$ |   $x$  |  $f(x)$ |
+    |-----|--------|---------|
+    |  0  |   0.2  | 0.96079 |
+    |  1  | 0.63333| 0.66958 |
+    |  2  | 1.16666| 0.32053 |
+    |  3  |   1.5  | 0.10540 |
+    |     |        |         |
+    |     |        |         |
+    |     |        |         |
+    """)
+    st.markdown(r"""
+    |      h =  0.216667     |
+    |------------------------|
+    | $i$ |   $x$  |  $f(x)$ |
+    |-----|--------|---------|
+    |  0  |   0.2  | 0.96079 |
+    |  1  | 0.41667| 0.91360 |
+    |  2  | 0.63333| 0.66958 |
+    |  3  |  0.85  | 0.48554 |
+    |  4  | 1.16666| 0.32053 |
+    |  5  | 1.28333| 0.19264 |
+    |  6  |   1.5  | 0.10540 |
+    """)
+    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.43333)(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
+    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
+    st.markdown("Regla del trapecio:")
     st.markdown(r"""
     | $i$ |   $x$  |  $f(x)$ |
     |-----|--------|---------|
@@ -26,25 +56,9 @@ with tab2:
     |  1  |   0.9  | 0.91360 |
     |  2  |   1.1  | 1.16092 |
     |  3  |   1.3  | 1.36178 |
-    |  4  |   1.5  | 1.48500 |
-    |  5  |   1.7  | 1.55007 |
-    |  6  |   1.9  | 1.52882 |
-    |  7  |   2.1  | 1.44513 |
     """)
-    st.markdown("Dado que el numero de subintervalos es siete y no se ajusta a la regla de Simpson 1/3, existen dos posibilidades: el primero o el ultimo subintervalo se integran usando la regla del trapecio y el resto con la regla de Simpson 1/3")
-    st.markdown("Primera opcion, iniciando con la regla de Simpson 1/3:")
-    st.markdown(r"$\int_{0.7}^{1.9} f(x)dx \cong \frac{0.2}{3}(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
-    st.markdown("Regla del trapecio:")
-    st.markdown(r"$\int_{1.9}^{2.1} f(x)dx = \frac{0.2}{2}(1.52882 + 1.44513) = 0.297395$")
     st.markdown("Total:")
-    st.markdown(r"$\int_{0.7}^{2.1} f(x)dx \cong 1.5193873 + 0.29739 = 1.8167823")
-    st.markdown("Segunda opcion, primer intervalo por la regla del trapecio:")
-    st.markdown(r"$\int_{0.7}^{0.9} f(x)dx \cong \frac{0.2}{2}(0.64835 + 0.91360) = 0.156195$")
-    st.markdown("Regla de Simpson 1/3")
-    st.markdown(r"$\int_{0.9}^{2.1} f(x)dx \cong \frac{0.2}{3}(0.91360 +4(1.16092) + 2(1.36178) + 4(1.48500) + 2(1.55007) + 4(1.52882) + 1.44513 = 1.661426$")
     st.markdown("Total:")
-    st.markdown(r"$\int_{0.7}^{2.1} f(x)dx \cong 0.156195 + 1.661426 = 1.817621$")
-    st.markdown("Normalmente no se sabe en que extremo aplicar la regla del Trapecio, por lo que graficar los puntos e identificar la forma general de la curva puede ser util.")
 with tab3:
     st.title(":blue[Regla de Simpson 3/8]")
     st.header("Aplicacion")
