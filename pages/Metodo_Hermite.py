@@ -29,24 +29,13 @@ with tab2:
     st.title(":blue[Metodo de Hermite]")
     st.header("Ejemplo")
     st.markdown("Usar el polinomio de menor grado que coincide con los datos mostrados en la tabla para la funcion de Bessel de pimera clase de orden cero para encontrar una aproximacion de $f(1.5)$")
-    latex_table = r'''
-    \begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    \textbf{j} & \textbf{x_j} & \textbf{f(x_j)} & \textbf{f'(x_j)} \\
-    \hline
-    0 & 1.3 & 0.6200860 & -0.5220232 \\
-    1 & 1.6 & 0.4554022 & -0.5698959 \\
-    2 & 1.9 & 0.2818186 & -0.5811571 \\
-    \hline
-    \end{tabular}
-    \caption{Datos de ejemplo}
-    \label{tab:datos-ejemplo}
-    \end{table}
-    '''
-
-    st.markdown(latex_table, unsafe_allow_html=True)
+    st. markdown("""
+    | $j$ | $x_j$ |  $f(x_j)$   |  $f'(x_j)$   |
+    |-----|-------|-------------|--------------|
+    |  0  |  1.3  |  0.6200860  |  -0.5220232  |
+    |  1  |  1.6  |  0.4554022  |  -0.5698959  |
+    |  2  |  1.9  |  0.2818186  |  -0.5811571  |
+    """)
     """
     | j | x_j | f(x_j)    | f'(x_j)    |
     |---|-----|-----------|------------|
@@ -67,3 +56,5 @@ with tab2:
     st.markdown("Este resultado es exacto en todas las cifras dadas.")
     st.markdown("La necesidad de determinar y evaluar los cocientes de Lagrange y sus derivadas, asi como el calculo de los componentes del polinomio, hace el procedimiento complicado y suceptible de errores, aun para valores pequeños de $n$. Un metodo alternativo para generar aproximaciones de Hermite esta basado en la formula de diferencias divididas de Newton.")
     st.markdown(r"$P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, ..., x_k](x-x_0)(x-x_1)...(x-x_{k-1})$")
+    st.markdown("y la conexion entre la $n$-esima diferencia dividida y la $n$-esima derivada de $f(x)$")
+    st.markdown("Supongase que se dan $n + 1$ numeros distintos $x_0, x_1, ..., x_n$ con sus valores de $f(x)$ y $f'(x)$. Lo primero es definir una nueva sucesion $z_0, z_1, ..., z_{2n+1}$ por")
