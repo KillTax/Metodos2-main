@@ -36,3 +36,16 @@ with tab2:
     | 1 | 1.6 | 0.4554022 | -0.5698959 |
     | 2 | 1.9 | 0.2818186 | -0.5811571 |
     """
+    st.markdown("Primero se calculan los polinomios de Lagrange y sus derivadas, para poder calcular los componentes del polinomio. Los resultados se muestran en la siguiente tabla:")
+    """
+    | i | x_j | f(x_j)    | f'(x_j)    | L_j(x) | L_j(x_j) | H_2,j | H_2,j   |
+    |---|-----|-----------|------------|--------|----------|-------|---------|
+    | 0 | 1.3 | 0.6200860 | -0.5220232 | 2/9    | -5       | 4/27  | 4/405   |
+    | 1 | 1.6 | 0.4554022 | -0.5698959 | 8/9    | 0        | 64/81 | -32/405 |
+    | 2 | 1.9 | 0.2818186 | -0.5811571 | -1/9   | 5        | 5/81  | -2/405  |
+    """
+    st.markdown("Entonces el polinomio queda:")
+    st.markdown(r"$H_5(1.5) = 0.620086(\frac{4}{27})+(\frac{64}{0.455402281})+0.2818186(\frac{5}{81})-0.5220232(\frac{4}{405})-0.5698959(\frac{-32}{405})-0.5811571(\frac{-2}{405})=0.511827701727")
+    st.markdown("Este resultado es exacto en todas las cifras dadas.")
+    st.markdown("La necesidad de determinar y evaluar los cocientes de Lagrange y sus derivadas, asi como el calculo de los componentes del polinomio, hace el procedimiento complicado y suceptible de errores, aun para valores pequeños de $n$. Un metodo alternativo para generar aproximaciones de Hermite esta basado en la formula de diferencias divididas de Newton.")
+    st.markdown(r"$P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, ..., x_k](x-x_0)(x-x_1)...(x-x_{k-1}$")
