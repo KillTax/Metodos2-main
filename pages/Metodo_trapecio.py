@@ -10,22 +10,37 @@ with tab1:
     st.markdown("La primera de las formulas de Newton-Cotes esta basada en aproximar $f(x)$ en el intervalo $(x_0,x_1)$ mediante una linea recta, de ahi el nombre de *regla del trapecio*, la cual fue obtenida mediante la integracion de $P_1(x)$; sin embargo, tambien puede considerarse una adaptacion de la definicion de la integral definida como una suma al estimar $\int_a^b f(x)dx$ subdividiendo el intervalo de $a$ a $b$ en $n$ subintervalos. El area bajo la curva en cada subintervalo es aproximada por el trapecio formado por sustituir la curva por su secante. Entonces, la integral es aproximada por la suma de todas las areas trapezoidales. Si se conociera el limite de esta suma cuando el ancho del intervalo tiende a cero, se tendria el valor exacto de la integral, pero en la integracion numerica el numero de intervalos es finito.")
     st.markdown("Para un intervalo $[a,b]$ subdividido en $n$ subintervalos de tamaño $h$, la formula se generaliza de la siguiente forma:")
     st.markdown(r"$\int_a^b f(x)dx = \sum_{i=0}^n \frac{h}{2}(f_i+f_{i+1}) = \frac{h}{2}(f_0 +2f_1 +2f_2 + ... +2f_{n-1} +f_n) =$")
-    st.markdown(r"$\int_a^b f(x)dx = \frac{h}{2} (f_0 +f_n + 2 \sum_{i=1}^{n-1} f_i$")
+    st.markdown(r"$\int_a^b f(x)dx = \frac{h}{2} (f_0 +f_n + 2 \sum_{i=1}^{n-1} f_i)$")
     st.markdown("A la generalizacion de la formula de Newton-Cotes para $n$ subintervalos se le llama *regla del trapecio compuesta* o simplemente *regla del trapecio*. Es obvio que el metodo esta sujeto a errores dependiendo del tamaño del intervalo y de las caracteristicas propias de la funcion.")
     st.markdown("Esta regla puede aplicarse a una funcion que solo se conoce por una tabla de valores o a una funcion conocida, en cuyo caso debera decidirse el valor apropiado de $h$ para obtener una buena aproximacion.")
 
 with tab2:
     st.title(":blue[Regla del Trapecio]")
     st.header("Ejemplo")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
+    st.markdown("Supongase que se desea integrar la funcion tabulada a continuacion sobre el intervalo (1.4, 3.8).")
+    st.markdown(r"""
+    | $x$ | $f(x)$ |
+    |-----|--------|
+    | 1.4 |  4.055 |
+    | 1.6 |  4.953 |
+    | 1.8 |  6.050 |
+    | 2.0 |  7.389 |
+    | 2.2 |  9.025 |
+    | 2.4 | 11.023 |
+    | 2.6 | 13.464 |
+    | 2.8 | 16.445 |
+    | 3.0 | 20.086 |
+    | 3.2 | 24.533 |
+    | 3.4 | 29.964 |
+    | 3.6 | 36.598 |
+    | 3.8 | 44.701 |
+    """)
+    st.markdown("Entonces empleando la regla del trapecio compuesta:")
+    st.markdown(r"$\int_1.4^3.8 f(x)dx = \frac{0.2}{2}(4.055 +2(4.953) + 2(6.050) + 2(7.389) + 2(9.025) + 2(11.023) + 2(13.464) + 2(16.445) + 2(20.086) + 2(24.533) + 2(29.964) + 2(36.598) + 44.701 = 40.7816)")
+    st.markdown("Los datos de la tabla corresponden a $f(x) = e^x$ asi que el valor exacto de la integral es:")
+    st.markdown(r"$e^3.8 - e^1.4 = 40.6460$")
+    st.markdown("Con Newton-Cotes se vio que el error de la regla del trapecio es ")
+    st.markdown(r"*error* $= -\frac{1}{12}h^3f''(\xi)$")
     st.markdown("")
     st.markdown("")
     st.markdown("")
