@@ -58,7 +58,7 @@ with tab2:
     st.markdown("Sin embargo, si se supone que la sustitucion razonable en esta situacion es:")
     st.markdown(r"$f[z_{2i},z_{2i+1}]=f'(x_i)$")
     st.markdown("Se puede usar los valores $f'(x_0), f'(x_1), ..., f'(x_n)$ en lugar de las primeras diferencias divididas indefinidas.")
-    st.markdown("""
+    st.markdown(r"""
     |        $z$       |          $f(z)$        |            $f(z_i, z_{i+1})$                |
     |------------------|------------------------|---------------------------------------------|
     |    $z_0 = x_0$   |    $f[z_0] = f(x_0)$   |           $f[z_0,z_1] = f'(x_0)             |
