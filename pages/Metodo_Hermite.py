@@ -29,14 +29,21 @@ with tab2:
     st.title(":blue[Metodo de Hermite]")
     st.header("Ejemplo")
     st.markdown("Usar el polinomio de menor grado que coincide con los datos mostrados en la tabla para la funcion de Bessel de pimera clase de orden cero para encontrar una aproximacion de $f(1.5)$")
-    st.latex(r"""\begin{tabular}{||l | c | r||}
+    st.latex(r"""
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    \hline
-    j & x_{j} & f(x_{j}) & f'(x_{j}) \\
+    \textbf{j} & \textbf{x_j} & \textbf{f(x_j)} & \textbf{f'(x_j)} \\
     \hline
     0 & 1.3 & 0.6200860 & -0.5220232 \\
+    1 & 1.6 & 0.4554022 & -0.5698959 \\
+    2 & 1.9 & 0.2818186 & -0.5811571 \\
     \hline
-    \end{tabular}""")
+    \end{tabular}
+    \caption{Datos de ejemplo}
+    \label{tab:datos-ejemplo}
+    \end{table}""")
     """
     | j | x_j | f(x_j)    | f'(x_j)    |
     |---|-----|-----------|------------|
