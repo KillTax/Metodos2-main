@@ -29,7 +29,7 @@ with tab2:
     st.title(":blue[Metodo de Hermite]")
     st.header("Ejemplo")
     st.markdown("Usar el polinomio de menor grado que coincide con los datos mostrados en la tabla para la funcion de Bessel de pimera clase de orden cero para encontrar una aproximacion de $f(1.5)$")
-    st.latex(r"""
+    latex_table = r'''
     \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|c|c|}
@@ -43,7 +43,10 @@ with tab2:
     \end{tabular}
     \caption{Datos de ejemplo}
     \label{tab:datos-ejemplo}
-    \end{table}""")
+    \end{table}
+    '''
+
+    st.markdown(latex_table, unsafe_allow_html=True)
     """
     | j | x_j | f(x_j)    | f'(x_j)    |
     |---|-----|-----------|------------|
