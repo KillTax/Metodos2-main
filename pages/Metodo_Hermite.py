@@ -29,6 +29,14 @@ with tab2:
     st.title(":blue[Metodo de Hermite]")
     st.header("Ejemplo")
     st.markdown("Usar el polinomio de menor grado que coincide con los datos mostrados en la tabla para la funcion de Bessel de pimera clase de orden cero para encontrar una aproximacion de $f(1.5)$")
+    st.latex(r"""\begin{tabular}{||l | c | r||}
+    \hline
+    \hline
+    j & x_{j} & f(x_{j}) & f'(x_{j}) \\
+    \hline
+    0 & 1.3 & 0.6200860 & -0.5220232 \\
+    \hline
+    \end{tabular}""")
     """
     | j | x_j | f(x_j)    | f'(x_j)    |
     |---|-----|-----------|------------|
@@ -48,4 +56,4 @@ with tab2:
     st.markdown(r"$H_5(1.5) = 0.620086(\frac{4}{27})+(\frac{64}{0.455402281})+0.2818186(\frac{5}{81})-0.5220232(\frac{4}{405})-0.5698959(\frac{-32}{405})-0.5811571(\frac{-2}{405})=0.511827701727$")
     st.markdown("Este resultado es exacto en todas las cifras dadas.")
     st.markdown("La necesidad de determinar y evaluar los cocientes de Lagrange y sus derivadas, asi como el calculo de los componentes del polinomio, hace el procedimiento complicado y suceptible de errores, aun para valores pequeños de $n$. Un metodo alternativo para generar aproximaciones de Hermite esta basado en la formula de diferencias divididas de Newton.")
-    st.markdown(r"$P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, ..., x_k](x-x_0)(x-x_1)...(x-x_{k-1}$")
+    st.markdown(r"$P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, ..., x_k](x-x_0)(x-x_1)...(x-x_{k-1})$")
