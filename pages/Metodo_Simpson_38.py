@@ -46,19 +46,18 @@ with tab2:
     |  5  | 1.28333| 0.19264 |
     |  6  |   1.5  | 0.10540 |
     """)
-    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.43333)(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
-    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.64835 +4(0.91360) + 2(1.16092) + 4(1.36178) + 2(1.48500) + 4(1.55007) + 1.52882 = 1.5193873$")
-    st.markdown("Regla del trapecio:")
+    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.43333)(0.96079 +3(0.66958) + 3(0.32053) + 0.10540) = 0.65593$")
+    st.markdown(r"$\int_{0.2}^{1.5} e^{-x^2}dx \cong \frac{3}{8}(0.216667)(0.96079 +3(0.91360) + 3(0.66958) + 2(0.48554) + 3(0.32053) + 3(0.19264) + 0.10540) = 0.65872$")
+    st.markdown("Los resultados para las aproximaciones restantes se concentran en la siguiente tabla")
     st.markdown(r"""
-    | $i$ |   $x$  |  $f(x)$ |
+    | $n$ |   $h$  | Integral|
     |-----|--------|---------|
-    |  0  |   0.7  | 0.64835 |
-    |  1  |   0.9  | 0.91360 |
-    |  2  |   1.1  | 1.16092 |
-    |  3  |   1.3  | 1.36178 |
+    |  3  | 0.43333| 0.65593 |
+    |  6  | 0.21667| 0.65872 |
+    |  9  | 0.14444| 0.65881 |
+    | 12  | 0.10833| 0.65882 |
     """)
-    st.markdown("Total:")
-    st.markdown("Total:")
+    st.markdown("Esta regla es menos eficiente que Simpson 1/3. Sin embargo, se emplea cuando se tiene una tabla de valores con $n$ multiplo de tres. Si se combinan las dos reglas, de Simpson 1/3 y Simpson 3/8, las aproximaciones obtenidas seran mucho mejores que las obtenidas con la regla del trapecio")
 with tab3:
     st.title(":blue[Regla de Simpson 3/8]")
     st.header("Aplicacion")

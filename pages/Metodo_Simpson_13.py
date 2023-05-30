@@ -43,7 +43,7 @@ with tab2:
     st.markdown("Segunda opcion, primer intervalo por la regla del trapecio:")
     st.markdown(r"$\int_{0.7}^{0.9} f(x)dx \cong \frac{0.2}{2}(0.64835 + 0.91360) = 0.156195$")
     st.markdown("Regla de Simpson 1/3")
-    st.markdown(r"$\int_{0.9}^{2.1} f(x)dx \cong \frac{0.2}{3}(0.91360 +4(1.16092) + 2(1.36178) + 4(1.48500) + 2(1.55007) + 4(1.52882) + 1.44513 = 1.661426$")
+    st.markdown(r"$\int_{0.9}^{2.1} f(x)dx \cong \frac{0.2}{3}(0.91360 +4(1.16092) + 2(1.36178) + 4(1.48500) + 2(1.55007) + 4(1.52882) + 1.44513) = 1.661426$")
     st.markdown("Total:")
     st.markdown(r"$\int_{0.7}^{2.1} f(x)dx \cong 0.156195 + 1.661426 = 1.817621$")
     st.markdown("Normalmente no se sabe en que extremo aplicar la regla del Trapecio, por lo que graficar los puntos e identificar la forma general de la curva puede ser util.")
