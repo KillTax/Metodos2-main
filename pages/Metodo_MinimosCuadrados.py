@@ -13,6 +13,6 @@ with tab1:
     st.markdown(r"$e_i = P_n(x_i)-y_i para i = 1, 2, ..., m$")
     st.markdown("Para minimizar $e_i$ se emplea el concepto de norma vectorial, las mas comunes son las que se analizan a continuacion")
 
-    st.subtitle("Error maximo o norma espectral")
+    st.subheader("Error maximo o norma espectral")
     st.markdown("La norma espectral consiste en hacer minima la magnitud del error maximo. Sea $P_n(x_i)$ el i-esimo valor de la recta de aproximacion y $y_i$ el i-esimo valor dado para $y$. El problema de determinar la ecuacion de la mejor aproximacion polinomial, en el sentido absoluto, consiste en encontrar los valores de los coeficientes $a_0, a_1, ..., a_n$ que minimicen")
     st.markdown(r"E_{\infty}(a_0, a_1, ..., a_n) = \max_{1 \leq i \leq m} \mid y_i-P_n(x_i) \mid")
