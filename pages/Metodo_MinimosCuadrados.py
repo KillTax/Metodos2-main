@@ -22,7 +22,7 @@ with tab1:
     st.markdown("Esta otra alternativa implica hallar los valores de $a_0, a_1, ..., a_n$ que minimicen")
     st.markdown(r"$E_1(a_0, a_1, ..., a_n) = \sum_{i=1}^m \mid y_1-P_n(x_i) \mid$")
     st.markdown("Esta cantidad se llama *desviacion absoluta*. Para minimizar una funcion de varias variables se deben igualar a cero sus derivadas parciales y resolver en forma simultanea las ecuaciones restantes.")
-    st.markdown(r"$\frac{\partial E_1}{\partial a_i} = 0 para i = 1, 2, ..., n$")
+    st.markdown(r"$\frac{\partial E_1}{\partial a_i} = 0$ para $i = 1, 2, ..., n$")
     st.markdown("La dificultad de este procedimiento radica en que el valor absoluto no es derivable en cero, y no necesariamente se puede obtener la solucion de este sistema de ecuaciones. Por otro lado, este criterio solo promedia el error en varios puntos sin dar suficiente valor relativo a un punto que esta muy alejado de la aproximacion.")
 
     st.subheader("")
