@@ -45,3 +45,21 @@ with tab1:
     st.markdown("La solucion de este sistema de ecuaciones es:")
     st.markdown(r"$a_0 = \frac{\sum x_i^2 \sum y_i - \sum x_iy_i \sum x_i}{m \sum x_i^2 - (\sum x_i)^2}$, $a_1 = \frac{m \sum x_iy_i - \sum x_i \sum y_i}{m \sum x_i^2 - (\sum x_i)^2}$")
     st.markdown("Todas las sumas son para $i = 1, ..., m$")
+
+with tab1:
+    st.title(":blue[Metodo de Minimos Cuadrados]")
+    st.header("Ejemplo")
+    st.markdown()
+    # Datos de muestra
+    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    y = [1.3, 3.5, 4.2, 5.0, 7.0, 8.8, 10.1, 12.5, 13.0, 15.6]
+
+    # Crear la gráfica
+    plt.plot(x, y, 'b.-')
+
+    # Personalizar la gráfica
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Gráfica de ejemplo')
+    # Mostrar la gráfica en Streamlit
+    st.pyplot(plt)
