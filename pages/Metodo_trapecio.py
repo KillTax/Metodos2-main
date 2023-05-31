@@ -54,3 +54,37 @@ with tab2:
 with tab3:
     st.title(":blue[Regla del Trapecio]")
     st.header("Aplicacion")
+    def regla_trapecio(a, b, n):
+        h = (b - a) / n
+        integral = 0.0
+        
+        x = a
+        for _ in range(n+1):
+            if x == a or x == b:
+                integral += f(x)
+            else:
+                integral += 2 * f(x)
+            x += h
+        
+        integral *= h / 2
+        return integral
+
+    def f(x):
+        # Aquí defines la función que deseas integrar
+        return x**2
+
+    def main():
+        st.title("Regla del Trapecio")
+
+        st.header("Ingresar Datos")
+        a = st.number_input("Valor de a:", step=0.1, format="%.2f")
+        b = st.number_input("Valor de b:", step=0.1, format="%.2f")
+        n = st.number_input("Número de intervalos (n):", min_value=1, step=1, value=1)
+
+        if st.button("Calcular"):
+            resultado = regla_trapecio(a, b, n)
+            st.subheader("Resultado:")
+            st.write(f"El valor aproximado de la integral es: {resultado}")
+
+    if __name__ == "__main__":
+        main()
