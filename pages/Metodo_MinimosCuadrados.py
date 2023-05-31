@@ -90,13 +90,13 @@ with tab2:
     |     1     |    1.3    |      1     |      1.3     |
     |     2     |    3.5    |      4     |       7      |
     |     3     |    4.2    |      9     |     12.6     |
-    |     4     |    1.3    |      1     |      1.3     |
-    |     5     |    3.5    |      4     |       7      |
-    |     6     |    4.2    |      9     |     12.6     |
-    |     7     |    1.3    |      1     |      1.3     |
-    |     8     |    3.5    |      4     |       7      |
-    |     9     |    4.2    |      9     |     12.6     |
-    |    10     |    1.3    |      1     |      1.3     |
+    |     4     |     5     |     16     |      20      |
+    |     5     |     7     |     25     |      35      |
+    |     6     |    8.8    |     36     |     52.8     |
+    |     7     |   10.1    |     49     |     70.7     |
+    |     8     |   12.5    |     64     |     100      |
+    |     9     |    13     |     81     |     117      |
+    |    10     |   15.6    |    100     |     156      |
     |$\sum = 55$|$\sum = 81$|$\sum = 385$|$\sum = 572.4$|
     """)
     st.markdown("El sistema de ecuaciones a resolver es")
@@ -107,7 +107,7 @@ with tab2:
     st.markdown("El polinomio lineal resultante es $P(x) = 1.538x - 0.36$. en la siguiente figura se muestran los puntos de la tabla y la linea de regresion que los ajusta por medio de este polinomio")
 
     #Grafica ajustada
-    
+
     # Datos de muestra
     x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     y = np.array([1.3, 3.5, 4.2, 5.0, 7.0, 8.8, 10.1, 12.5, 13.0, 15.6])
@@ -134,3 +134,20 @@ with tab2:
 
     # Mostrar la gráfica en Streamlit
     st.image('grafica.png')
+
+    st.markdown("Para analizar el error numericamente se evalua el polinomio en cada uno de los valores de $x_i$ y se obtiene el error, lo que puede verse en la siguiente tabla")
+    st. markdown("""
+    |   $x_i$   |   $y_i$   |  $P(x_i)$   |$(y_i-P(x_i))^2$|
+    |-----------|-----------|-------------|----------------|
+    |     1     |    1.3    |       1     |    0.014884    |
+    |     2     |    3.5    |       4     |    0.614656    |
+    |     3     |    4.2    |       9     |    0.002916    |
+    |     4     |     5     |      16     |    0.627264    |
+    |     5     |     7     |      25     |     0.1089     |
+    |     6     |    8.8    |      36     |    0.004624    |
+    |     7     |   10.1    |      49     |    0.093636    |
+    |     8     |   12.5    |      64     |    0.309136    |
+    |     9     |    13     |      81     |    0.232324    |
+    |    10     |   15.6    |     100     |     0.3364     |
+    |$\sum = 55$|$\sum = 81$| $\sum = 385$|    2.34474     |
+    """)
