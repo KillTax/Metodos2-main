@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -58,15 +58,28 @@ with tab3:
         h = (b - a) / n
         integral = 0.0
         
-        x = a
-        for _ in range(n+1):
-            if x == a or x == b:
-                integral += f(x)
-            else:
-                integral += 2 * f(x)
-            x += h
+        x = np.linspace(a, b, n+1)
+        y = f(x)
         
-        integral *= h / 2
+        plt.figure(figsize=(8, 5))
+        plt.plot(x, y, 'b-', linewidth=2)
+        
+        for i in range(n):
+            xi = [x[i], x[i], x[i+1], x[i+1]]
+            yi = [0, f(x[i]), f(x[i+1]), 0]
+            plt.fill(xi, yi, 'g', edgecolor='black', alpha=0.3)
+            
+            if i == n // 2:
+                plt.text((x[i] + x[i+1]) / 2, max(y), f"n={n}", ha='center', va='bottom', color='r')
+            
+            integral += (f(x[i]) + f(x[i+1])) / 2 * h
+        
+        plt.xlabel('x')
+        plt.ylabel('f(x)')
+        plt.title('Regla del Trapecio')
+        plt.grid(True)
+        
+        st.pyplot(plt)
         return integral
 
     def f(x):
@@ -74,7 +87,7 @@ with tab3:
         return x**2
 
     def main():
-        st.title("Regla del Trapecio")
+        st.title("Regla del Trapecio con Graficación")
 
         st.header("Ingresar Datos")
         a = st.number_input("Valor de a:", step=0.1, format="%.2f")
@@ -82,7 +95,7 @@ with tab3:
         n = st.number_input("Número de intervalos (n):", min_value=1, step=1, value=1)
 
         if st.button("Calcular"):
-            resultado = regla_trapecio(a, b, n)
+            resultado = regla_trapecio(a, b, int(n))
             st.subheader("Resultado:")
             st.write(f"El valor aproximado de la integral es: {resultado}")
 
