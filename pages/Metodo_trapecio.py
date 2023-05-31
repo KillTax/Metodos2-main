@@ -1,6 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+from sympy import *
 
 
 tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplo","Aplicacion"])
@@ -54,25 +55,25 @@ with tab2:
 with tab3:
     st.title(":blue[Regla del Trapecio]")
     st.header("Aplicacion")
-    def regla_trapecio(a, b, n):
+    def regla_trapecio(a, b, n, f):
         h = (b - a) / n
         integral = 0.0
         
         x = np.linspace(a, b, n+1)
-        y = f(x)
+        y = [f.subs('x', xi) for xi in x]
         
         plt.figure(figsize=(8, 5))
         plt.plot(x, y, 'b-', linewidth=2)
         
         for i in range(n):
             xi = [x[i], x[i], x[i+1], x[i+1]]
-            yi = [0, f(x[i]), f(x[i+1]), 0]
+            yi = [0, y[i], y[i+1], 0]
             plt.fill(xi, yi, 'g', edgecolor='black', alpha=0.3)
             
             if i == n // 2:
                 plt.text((x[i] + x[i+1]) / 2, max(y), f"n={n}", ha='center', va='bottom', color='r')
             
-            integral += (f(x[i]) + f(x[i+1])) / 2 * h
+            integral += (y[i] + y[i+1]) / 2 * h
         
         plt.xlabel('x')
         plt.ylabel('f(x)')
@@ -82,10 +83,6 @@ with tab3:
         st.pyplot(plt)
         return integral
 
-    def f(x):
-        # Aquí defines la función que deseas integrar
-        return x**2
-
     def main():
         st.title("Regla del Trapecio con Graficación")
 
@@ -93,9 +90,17 @@ with tab3:
         a = st.number_input("Valor de a:", step=0.1, format="%.2f")
         b = st.number_input("Valor de b:", step=0.1, format="%.2f")
         n = st.number_input("Número de intervalos (n):", min_value=1, step=1, value=1)
-
+        function_str = st.text_input("Ingrese la función f(x):", value="x**2")
+        
+        x = symbols('x')
+        try:
+            f = eval(function_str)
+        except:
+            st.warning("La función ingresada no es válida.")
+            return
+        
         if st.button("Calcular"):
-            resultado = regla_trapecio(a, b, int(n))
+            resultado = regla_trapecio(a, b, int(n), f)
             st.subheader("Resultado:")
             st.write(f"El valor aproximado de la integral es: {resultado}")
 
