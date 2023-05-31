@@ -86,73 +86,71 @@ with tab2:
 with tab3:
     st.title(":blue[Metodo de Hermite]")
     st.header("Aplicacion")
-import streamlit as st
-import numpy as np
 
-def hermite_interpolation(x, f_x, f_prime_x, x_interp):
-    n = len(x)
-    m = 2 * n
-    
-    Q = np.zeros((m, m))
-    b = np.zeros(m)
-    
-    for i in range(n):
-        Q[2 * i][0] = x[i]
-        Q[2 * i + 1][0] = x[i]
-        Q[2 * i + 1][1] = f_prime_x[i]
+    def hermite_interpolation(x, f_x, f_prime_x, x_interp):
+        n = len(x)
+        m = 2 * n
         
-        b[2 * i] = f_x[i]
-        b[2 * i + 1] = f_x[i]
-    
-    for i in range(2, m):
-        for j in range(1, i):
-            Q[i][j] = (Q[i][j-1] - Q[i-1][j-1]) / (Q[i][0] - Q[i-j][0])
-    
-    interpolated_values = []
-    
-    for interp_point in x_interp:
-        p = Q[0][0]
-        product = 1
+        Q = np.zeros((m, m))
+        b = np.zeros(m)
         
-        for i in range(1, m):
-            product *= (interp_point - Q[i-1][0])
-            p += Q[i][i] * product
+        for i in range(n):
+            Q[2 * i][0] = x[i]
+            Q[2 * i + 1][0] = x[i]
+            Q[2 * i + 1][1] = f_prime_x[i]
+            
+            b[2 * i] = f_x[i]
+            b[2 * i + 1] = f_x[i]
         
-        interpolated_values.append(p)
-    
-    return interpolated_values
+        for i in range(2, m):
+            for j in range(1, i):
+                Q[i][j] = (Q[i][j-1] - Q[i-1][j-1]) / (Q[i][0] - Q[i-j][0])
+        
+        interpolated_values = []
+        
+        for interp_point in x_interp:
+            p = Q[0][0]
+            product = 1
+            
+            for i in range(1, m):
+                product *= (interp_point - Q[i-1][0])
+                p += Q[i][i] * product
+            
+            interpolated_values.append(p)
+        
+        return interpolated_values
 
 
-def main():
-    st.title("Método de Hermite")
-    
-    st.header("Ingresar Datos")
-    n = st.number_input("Número de puntos:", min_value=2, step=1, value=3)
-    
-    x_values = []
-    f_x_values = []
-    f_prime_x_values = []
-    
-    for i in range(n):
-        st.subheader(f"Punto {i+1}")
-        x = st.number_input("Valor de x:", key=f"valor_x_{i}")
-        f_x = st.number_input("Valor de f(x):", key=f"valor_y_{i}")
-        f_prime_x = st.number_input("Valor de f'(x):", key=f"valor_fx_{i}")
+    def main():
+        st.title("Método de Hermite")
         
-        x_values.append(x)
-        f_x_values.append(f_x)
-        f_prime_x_values.append(f_prime_x)
-    
-    st.header("Interpolación")
-    x_interp = st.text_input("Valores de x a interpolar (separados por comas):")
-    x_interp = [float(x.strip()) for x in x_interp.split(",") if x.strip()]
-    
-    if st.button("Interpolar"):
-        interpolated_values = hermite_interpolation(x_values, f_x_values, f_prime_x_values, x_interp)
+        st.header("Ingresar Datos")
+        n = st.number_input("Número de puntos:", min_value=2, step=1, value=3)
         
-        st.subheader("Resultados:")
-        for i, interp_point in enumerate(x_interp):
-            st.write(f"Para x = {interp_point}, el valor interpolado es {interpolated_values[i]}")
+        x_values = []
+        f_x_values = []
+        f_prime_x_values = []
+        
+        for i in range(n):
+            st.subheader(f"Punto {i+1}")
+            x = st.number_input("Valor de x:", key=f"valor_x_{i}")
+            f_x = st.number_input("Valor de f(x):", key=f"valor_y_{i}")
+            f_prime_x = st.number_input("Valor de f'(x):", key=f"valor_fx_{i}")
+            
+            x_values.append(x)
+            f_x_values.append(f_x)
+            f_prime_x_values.append(f_prime_x)
+        
+        st.header("Interpolación")
+        x_interp = st.text_input("Valores de x a interpolar (separados por comas):")
+        x_interp = [float(x.strip()) for x in x_interp.split(",") if x.strip()]
+        
+        if st.button("Interpolar"):
+            interpolated_values = hermite_interpolation(x_values, f_x_values, f_prime_x_values, x_interp)
+            
+            st.subheader("Resultados:")
+            for i, interp_point in enumerate(x_interp):
+                st.write(f"Para x = {interp_point}, el valor interpolado es {interpolated_values[i]}")
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
