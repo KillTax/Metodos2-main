@@ -65,6 +65,10 @@ with tab2:
     |   9   | 13.0  |
     |  10   | 15.6  |    
     """)
+
+    #Grafica
+
+    # Datos de muestra
     x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     y = [1.3, 3.5, 4.2, 5.0, 7.0, 8.8, 10.1, 12.5, 13.0, 15.6]
 
@@ -74,6 +78,25 @@ with tab2:
     # Personalizar la gráfica
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title('Gráfica de ejemplo')
+    plt.title('Puntos sobre los que se realiza el ajuste')
     # Mostrar la gráfica en Streamlit
     st.pyplot(plt)
+
+    st.markdown("La razon probable de que no se ajuste una recta a estos datos es que, al ser datos experimentales, tienen errores.")
+    st.markdown("Para obtener los coeficientes del sistema de ecuaciones se construye la siguiente tabla")
+    st. markdown("""
+    |   $x_i$   |   $y_i$   |  $x_i^2$   |   $x_iy_i$   |
+    |-----------|-----------|------------|--------------|
+    |     1     |    1.3    |      1     |      1.3     |
+    |     2     |    3.5    |      4     |       7      |
+    |     3     |    4.2    |      9     |     12.6     |
+    |     4     |    1.3    |      1     |      1.3     |
+    |     5     |    3.5    |      4     |       7      |
+    |     6     |    4.2    |      9     |     12.6     |
+    |     7     |    1.3    |      1     |      1.3     |
+    |     8     |    3.5    |      4     |       7      |
+    |     9     |    4.2    |      9     |     12.6     |
+    |    10     |    1.3    |      1     |      1.3     |
+    |$\sum = 55$|$\sum = 81$|$\sum = 385$|$\sum = 572.4$|
+    """)
+    st.markdown("El sistema de ecuaciones a resolver es")
