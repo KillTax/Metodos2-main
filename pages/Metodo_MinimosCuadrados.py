@@ -47,7 +47,7 @@ with tab1:
     st.markdown(r"$a_0 = \frac{\sum x_i^2 \sum y_i - \sum x_iy_i \sum x_i}{m \sum x_i^2 - (\sum x_i)^2}$, $a_1 = \frac{m \sum x_iy_i - \sum x_i \sum y_i}{m \sum x_i^2 - (\sum x_i)^2}$")
     st.markdown("Todas las sumas son para $i = 1, ..., m$")
 
-with tab1:
+with tab2:
     st.title(":blue[Metodo de Minimos Cuadrados]")
     st.header("Ejemplo")
     st.markdown("Supongase que se desea ajustar una curva al siguiente conjunto de datos, los cuales al graficarlos sugieren una relacion lineal.")
