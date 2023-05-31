@@ -101,3 +101,7 @@ with tab2:
     """)
     st.markdown("El sistema de ecuaciones a resolver es")
     st.latex(r"""\begin{bmatrix} 10 & 55 \\ 55 & 38 \\ \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \\ \end{bmatrix} = \begin{bmatrix} 81 \\ 572.4 \\ \end{bmatrix}""")
+    st.markdown("La solucion para los coeficientes es")
+    st.markdown(r"$\frac{385(81) - 55(572.4)}{10(385)-(55)^2} = -0.36$")
+    st.markdown(r"$\frac{10(572.4) - 55(81)}{10(385)-(55)^2} = 1.538$")
+    st.markdown("El polinomio lineal resultante es $P(x) = 1.538x - 0.36$. en la siguiente figura se muestran los puntos de la tabla y la linea de regresion que los ajusta por medio de este polinomio")
