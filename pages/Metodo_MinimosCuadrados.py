@@ -32,9 +32,9 @@ with tab1:
     st.markdown("El metodo de minimos cuadrados, en comparacion con los dos criterios anteriores, concede mayor valor relativo al punto que esta alejado del resto de los datos, pero no permite que ese punto domine la aproximacion.")
 
     st.subheader("Regresion lineal")
-    st.markdown("")
-    st.markdown(r"")
-    st.markdown("")
+    st.markdown("Cuando un polinomio de ajuste es de grado uno, es decir, es una linea recta, el ajuste se conoce como regresion lineal y la recta de ajuste optimo se conoce como *recta de regresion*, esta recta esta dada por")
+    st.markdown(r"$P(x) = a_1x + a_0$")
+    st.markdown("El problema de ajustar la mejor recta con minimos cuadrados a una coleccion de datos $[(x_i,y_i)) \right\}_{i=1}^m]$")
     st.markdown(r"")
     st.markdown("")
     st.markdown(r"")
