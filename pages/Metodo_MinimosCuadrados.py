@@ -100,4 +100,4 @@ with tab2:
     |$\sum = 55$|$\sum = 81$|$\sum = 385$|$\sum = 572.4$|
     """)
     st.markdown("El sistema de ecuaciones a resolver es")
-    st.markdown(r"$$\vec{a} = \begin{bmatrix} 10 & 55 \\ 55 % 385 \end{bmatrix}$$")
+    st.markdown(r"$$\begin{bmatrix} 10 & 55 \\ 55 % 385 \end{bmatrix}$$")
