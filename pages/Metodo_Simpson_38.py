@@ -1,6 +1,7 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from sympy import *
 
 
 tab1, tab2, tab3 = st.tabs(["Definiciones","Ejemplo","Aplicacion"])
@@ -61,3 +62,65 @@ with tab2:
 with tab3:
     st.title(":blue[Regla de Simpson 3/8]")
     st.header("Aplicacion")
+
+    def regla_simpson_3_8(a, b, n, f):
+        h = (b - a) / n
+        x = np.linspace(a, b, n+1)
+        y = [f.subs('x', xi) for xi in x]
+        integral = 0.0
+        
+        plt.figure(figsize=(8, 5))
+        plt.plot(x, y, 'b-', linewidth=2)
+        
+        for i in range(0, n, 3):
+            xi = [x[i], x[i+1], x[i+2], x[i+3]]
+            yi = [y[i], y[i+1], y[i+2], y[i+3]]
+            plt.fill(xi, yi, 'g', edgecolor='black', alpha=0.3)
+            
+            if i == n // 3:
+                plt.text((x[i] + x[i+3]) / 2, max(y), f"n={n}", ha='center', va='bottom', color='r')
+            
+            integral += 3/8 * h * (y[i] + 3*y[i+1] + 3*y[i+2] + y[i+3])
+        
+        plt.xlabel('x')
+        plt.ylabel('f(x)')
+        plt.title('Regla de Simpson 3/8')
+        plt.grid(True)
+        
+        st.pyplot(plt)
+        return integral
+
+    def calcular_error(integral_exacta, integral_aproximada):
+        return abs(integral_exacta - integral_aproximada)
+
+    def main():
+        st.title("Regla de Simpson 3/8 con Graficación y Error")
+
+        st.header("Ingresar Datos")
+        a = st.number_input("Valor de a:", step=0.1, format="%.2f")
+        b = st.number_input("Valor de b:", step=0.1, format="%.2f")
+        n = st.number_input("Número de intervalos (n):", min_value=3, step=3, value=3)
+        function_str = st.text_input("Ingrese la función f(x):", value="x**2")
+        integral_exacta = st.number_input("Valor de la integral exacta:", step=0.01, format="%.4f")
+        
+        x = symbols('x')
+        try:
+            f = eval(function_str)
+        except:
+            st.warning("La función ingresada no es válida.")
+            return
+        
+        if n % 3 != 0:
+            st.warning("El número de intervalos debe ser múltiplo de 3 para utilizar la regla de Simpson 3/8.")
+            return
+        
+        if st.button("Calcular"):
+            integral_aproximada = regla_simpson_3_8(a, b, int(n), f)
+            error = calcular_error(integral_exacta, integral_aproximada)
+            
+            st.subheader("Resultado:")
+            st.write(f"El valor aproximado de la integral es: {integral_aproximada}")
+            st.write(f"El error de aproximación es: {error}")
+
+    if __name__ == "__main__":
+        main()
