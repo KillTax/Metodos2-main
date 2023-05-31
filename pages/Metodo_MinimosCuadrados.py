@@ -100,4 +100,4 @@ with tab2:
     |$\sum = 55$|$\sum = 81$|$\sum = 385$|$\sum = 572.4$|
     """)
     st.markdown("El sistema de ecuaciones a resolver es")
-    st.markdown(r"$\left\[\begin{array}{2}10 & 55\\55 & 385\end{array}\right\]$")
+    st.markdown(r"$$\left\[\begin{array}{2}10 & 55\\55 & 385\end{array}\right\]$$")
