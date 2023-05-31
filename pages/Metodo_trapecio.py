@@ -83,14 +83,18 @@ with tab3:
         st.pyplot(plt)
         return integral
 
+    def calcular_error(integral_exacta, integral_aproximada):
+        return abs(integral_exacta - integral_aproximada)
+
     def main():
-        st.title("Regla del Trapecio con Graficación")
+        st.title("Regla del Trapecio con Graficación y Error")
 
         st.header("Ingresar Datos")
         a = st.number_input("Valor de a:", step=0.1, format="%.2f")
         b = st.number_input("Valor de b:", step=0.1, format="%.2f")
         n = st.number_input("Número de intervalos (n):", min_value=1, step=1, value=1)
         function_str = st.text_input("Ingrese la función f(x):", value="x**2")
+        integral_exacta = st.number_input("Valor de la integral exacta:", step=0.01, format="%.4f")
         
         x = symbols('x')
         try:
@@ -100,9 +104,12 @@ with tab3:
             return
         
         if st.button("Calcular"):
-            resultado = regla_trapecio(a, b, int(n), f)
+            integral_aproximada = regla_trapecio(a, b, int(n), f)
+            error = calcular_error(integral_exacta, integral_aproximada)
+            
             st.subheader("Resultado:")
-            st.write(f"El valor aproximado de la integral es: {resultado}")
+            st.write(f"El valor aproximado de la integral es: {integral_aproximada}")
+            st.write(f"El error de aproximación es: {error}")
 
     if __name__ == "__main__":
         main()
