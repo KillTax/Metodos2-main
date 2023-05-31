@@ -34,7 +34,7 @@ with tab1:
     st.subheader("Regresion lineal")
     st.markdown("Cuando un polinomio de ajuste es de grado uno, es decir, es una linea recta, el ajuste se conoce como regresion lineal y la recta de ajuste optimo se conoce como *recta de regresion*, esta recta esta dada por")
     st.markdown(r"$P(x) = a_1x + a_0$")
-    st.markdown("El problema de ajustar la mejor recta con minimos cuadrados a una coleccion de datos $[(x_i,y_i)) \right\}_{i=1}^m]$")
+    st.markdown("El problema de ajustar la mejor recta con minimos cuadrados a una coleccion de datos $[(x_i,y_i)] \}_{i=1}^m$")
     st.markdown(r"")
     st.markdown("")
     st.markdown(r"")
