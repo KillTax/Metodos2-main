@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página Web</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Agrega aquí tus estilos personalizados */
+
+    </style>
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function() {
+            // Código JavaScript genérico
+            var btn = document.getElementById("myButton");
+            btn.addEventListener("click", function() {
+                alert("¡Haz clic en el botón!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <?php
+        // Código PHP - Conexión a una base de datos genérica
+        $servername = "nombre_del_servidor";
+        $username = "nombre_de_usuario";
+        $password = "contraseña";
+        $database = "nombre_de_la_base_de_datos";
+
+        // Crear conexión
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Error al conectar con la base de datos: " . $conn->connect_error);
+        }
+    ?>
+
+    <header>
+        <h1>Mi Página Web</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#datos-personales">Datos Personales</a></li>
+            <li><a href="#definicion-web">Definición de Ingeniería Web</a></li>
+            <li><a href="#definicion-software">Definición de Ingeniería de Software</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="datos-personales">
+            <h2>Datos Personales</h2>
+            <p>Nombre: Tu Nombre</p>
+            <p>Correo Electrónico: tu@email.com</p>
+            <p>Teléfono: 1234567890</p>
+        </section>
+
+        <section id="definicion-web">
+            <h2>Definición de Ingeniería Web</h2>
+            <p>La ingeniería web es una disciplina que se encarga del desarrollo, diseño y mantenimiento de sitios web. Involucra el uso de lenguajes de programación como HTML, CSS, JavaScript y PHP para crear páginas web interactivas y funcionales.</p>
+        </section>
+
+        <section id="definicion-software">
+            <h2>Definición de Ingeniería de Software</h2>
+            <p>La ingeniería de software es el estudio y la aplicación de principios, métodos y herramientas para el desarrollo de software de calidad. Se enfoca en el diseño, construcción, prueba y mantenimiento de sistemas de software de manera sistemática y disciplinada.</p>
+        </section>
+
+        <section>
+            <h2>Tabla Comparativa</h2>
+            <table>
+                <tr>
+                    <th>Diferencia</th>
+                    <th>Ingeniería Web</th>
+                    <th>Ingeniería de Software</th>
+                </tr>
+                <tr>
+                    <td>Enfoque</td>
+                    <td>Desarrollo de aplicaciones web y sitios</td>
+                    <td>Desarrollo de software en general</td>
+                </tr>
+                <tr>
+                    <td>Tecnologías</td>
+                    <td>HTML, CSS, JavaScript, PHP</td>
+                    <td>Varía según los requisitos del proyecto</td>
+                </tr>
+                <tr>
+                    <td>Objetivo</td>
+                    <td>Crear experiencias interactivas en la web</td>
+                    <td>Crear soluciones de software para problemas específicos</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Funcionamiento de la Web</h2>
+            <p>La web funciona a través de un cliente (navegador web) que envía solicitudes a un servidor web. El servidor procesa las solicitudes y envía las respuestas al cliente, que luego las muestra al usuario. La comunicación entre el cliente y el servidor se basa en el protocolo HTTP.</p>
+        </section>
+
+        <section>
+            <h2>Navegadores Web</h2>
+            <ul>
+                <li>Google Chrome: Es un navegador popular conocido por su rapidez, estabilidad y compatibilidad con estándares web.</li>
+                <li>Mozilla Firefox: Es un navegador de código abierto que se destaca por su enfoque en la privacidad y la personalización.</li>
+                <li>Microsoft Edge: Es el navegador predeterminado en Windows 10 y ofrece una integración fluida con otros servicios de Microsoft.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Servidores Web</h2>
+            <ul>
+                <li>Apache HTTP Server: Es el servidor web más utilizado en el mundo debido a su flexibilidad y seguridad.</li>
+                <li>Nginx: Es un servidor web ligero y de alto rendimiento que se destaca por su capacidad para manejar un gran número de conexiones simultáneas.</li>
+                <li>Microsoft IIS: Es el servidor web de Microsoft diseñado para funcionar en entornos Windows y es especialmente compatible con tecnologías de Microsoft.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Cosas que debes evitar al diseñar una web</h2>
+            <ul>
+                <li>Demasiados elementos visuales que distraigan al usuario.</li>
+                <li>Tiempo de carga lento debido a imágenes o scripts pesados.</li>
+                <li>Falta de navegación intuitiva y estructura clara del sitio.</li>
+                <li>Contenido desactualizado o información incorrecta.</li>
+                <li>No optimizar el sitio para dispositivos móviles.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Proceso de Desarrollo de Ingeniería Web</h2>
+            <ol>
+                <li>Análisis de requisitos y definición de objetivos.</li>
+                <li>Diseño de la estructura y la interfaz del sitio web.</li>
+                <li>Implementación utilizando HTML, CSS, JavaScript y PHP.</li>
+                <li>Pruebas y depuración del sitio web.</li>
+                <li>Despliegue del sitio web en un servidor web.</li>
+                <li>Mantenimiento y actualización continua del sitio.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Ligas a Tutoriales y Páginas</h2>
+            <ul>
+                <li><a href="https://www.acatlan.unam.mx/" target="_blank">UNAM FES Acatlán</a></li>
+                <li><a href="https://www.mac.acatlan.unam.mx/" target="_blank">MAC Acatlán</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools (Tutoriales)</a></li>
+                <!-- Agrega más enlaces relevantes aquí -->
+            </ul>
+        </section>
+
+    </main>
+
+    <?php
+        // Cerrar la conexión a la base de datos
+        $conn->close();
+    ?>
+
+    <footer>
+        <h3>Pie de página</h3>
+    </footer>
+</body>
+</html>
